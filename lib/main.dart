@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nyobahive/layout/form_page.dart';
-
 import 'layout/home_page.dart';
 import 'model/contact.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized;
+
   await Hive.initFlutter();
 
   Hive.registerAdapter(ContactAdapter());
@@ -23,11 +23,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FormPage(),
+      home: HomePage(),
     );
   }
 }
